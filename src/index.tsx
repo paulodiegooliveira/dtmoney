@@ -35,16 +35,16 @@ createServer({
     this.namespace = "/api";
 
     this.get("/transactions.php", () => {
-      return this.schema.all("transaction");
-      // return [
-      //   {
-      //     id: 1,
-      //     title: "transaction 01",
-      //     amount: "400",
-      //     type: "deposit",
-      //     createdAt: new Date(),
-      //   },
-      // ];
+      // return this.schema.all("transaction");
+      return [
+        {
+          id: 1,
+          title: "transaction 01",
+          amount: "400",
+          type: "deposit",
+          createdAt: new Date(),
+        },
+      ];
     });
 
     this.post("/transactions.php", (schema, request) => {
