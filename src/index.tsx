@@ -32,10 +32,10 @@ createServer({
   },
 
   routes() {
-    // this.namespace = "/api";
+    this.namespace = "/api";
 
-    this.get("/", () => {
-      return this.schema.all("/");
+    this.get("/transactions", () => {
+      return this.schema.all("transaction");
       // return [
       //   {
       //     id: 1,
@@ -47,7 +47,7 @@ createServer({
       // ];
     });
 
-    this.post("/", (schema, request) => {
+    this.post("/transactions", (schema, request) => {
       const data = JSON.parse(request.requestBody);
       return schema.create("transaction", data);
     });
