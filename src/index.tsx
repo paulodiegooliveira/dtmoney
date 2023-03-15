@@ -34,7 +34,7 @@ createServer({
   routes() {
     // this.namespace = "/api";
 
-    this.get("/transactions.php", () => {
+    this.get("/", () => {
       return this.schema.all("/");
       // return [
       //   {
@@ -47,7 +47,7 @@ createServer({
       // ];
     });
 
-    this.post("/transactions.php", (schema, request) => {
+    this.post("/", (schema, request) => {
       const data = JSON.parse(request.requestBody);
       return schema.create("transaction", data);
     });
