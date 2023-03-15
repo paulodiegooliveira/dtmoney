@@ -34,7 +34,7 @@ createServer({
   routes() {
     this.namespace = "/api";
 
-    this.get("/transactions", () => {
+    this.get("/transactions.php", () => {
       return this.schema.all("transaction");
       // return [
       //   {
